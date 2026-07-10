@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rank Corporal | Gamificação de Força</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="header">
+    <h1 class="logo">RANK <span>CORPORAL</span></h1>
+    <p class="subtitle">Sua força, seu elo. Suba de rank no mundo real.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="panel elo-panel">
+      <span class="panel-label">ELO ATUAL — <b id="eloGroupName">SELECIONE UM GRUPO</b></span>
+      <div class="elo-display" id="eloDisplay">
+        <div class="elo-badge" id="eloBadge">
+          <span class="elo-icon" id="eloIcon">⚔️</span>
+        </div>
+        <div class="elo-info">
+          <h2 class="elo-name" id="eloName">SEM RANK</h2>
+          <p class="elo-1rm">1RM Estimado: <span id="eloValue">0</span> kg</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel form-panel">
+      <span class="panel-label">REGISTRAR CARGA</span>
+      <form id="loadForm" class="form">
+        <div class="field">
+          <label for="muscleGroup">Grupo Muscular</label>
+          <select id="muscleGroup" required>
+            <option value="Peito">Peito</option>
+            <option value="Costas">Costas</option>
+            <option value="Pernas">Pernas</option>
+            <option value="Ombros">Ombros</option>
+            <option value="Braços">Braços</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="load">Carga (kg)</label>
+          <input type="number" id="load" min="1" step="0.5" placeholder="Ex: 80" required>
+        </div>
+        <div class="field">
+          <label for="reps">Repetições</label>
+          <input type="number" id="reps" min="1" max="30" placeholder="Ex: 8" required>
+        </div>
+        <button type="submit" class="btn-save">SALVAR TREINO</button>
+      </form>
+    </section>
+
+    <section class="panel chart-panel">
+      <span class="panel-label">MAPA DE FORÇA</span>
+      <canvas id="radarChart"></canvas>
+    </section>
+
+  </main>
+
+  <footer class="footer">Rank Corporal © <span id="year"></span> — Suba de nível todo dia.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
